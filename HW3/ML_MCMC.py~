@@ -1,0 +1,68 @@
+# /usr/bin/env python
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pdb
+
+## define the function
+def MaxLikelihood(m, b, Pb, Vb, Yb):
+    """
+    Calculate maxium likelihood value
+    input paramter:
+      m: gradient
+      b: intercept
+      Pb, Vb, Yb: bayesian analysis parameters
+    """
+    
+    global x, y, dy
+    y_mod = m * x + b
+    p = np.array([m, b, Pb, Vb, Yb])
+    c = 1e48 # a constant value to normalize
+    max_list = np.array([4.0, 150., 1., 4000., 700.]) # maximum boundary 
+    min_list = np.array([0., -150., 0., 0., 0.]) #minimum boundary
+    if ((p > max_list).any() or (p < min_list).any()): #exclude nonphysical value
+        return 0
+    else:
+        return c * np.prod((1 - Pb)/np.sqrt(2 * np.pi * dy**2) * np.exp(-(y - y_mod)**2/(2 * dy**2)) 
+            + Pb/np.sqrt(2 * np.pi * (dy**2 + Vb)) * np.exp(-(y - Yb)**2/(2 * dy**2)))
+        
+    
+def MCMC(m0, b0, Pb0, Vb0, Yb0, step = 1.0, n_step = 1e5):
+    base_length = np.array([0.04, 3, 0.01, 40, 7]) # set the basic step length
+                                                      # 0.1% for m, and b
+                                                      # 10% for p, v, y
+    ML0 = MaxLikelihood(m0, b0, Pb0, Vb0, Yb0)
+    m1, b1, Pb1, Vb1, Yb1, ML1 = m0, b0, Pb0, Vb0, Yb0, ML0 # 0 represent old, 1 represent new 
+    m_list = []
+    b_list = []
+    Pb_list = []
+    Vb_list = []
+    Yb_list = []
+    ML_list = []
+    for para_list, para in zip([m_list, b_list, Pb_list, Vb_list, Yb_list, ML_list], [m1, b1, Pb1, Vb1, Yb1, ML1]):
+        para_list.append(para)
+    
+    for i in range(n_step):
+        change_id = randint(0, 4) # randomly choose a parameter to change
+        m1, b1, Pb1, Vb1, Yb1 = m0, b0, Pb0, Vb0, Yb0
+        [m1, b1, Pb1, Vb1, Yb1][change_id] = [m0, b0, Pb0, Vb0, Yb0][change_id] + base_length[change_id] * step
+        ML1 = MaxLikelihood(m1, b1, Pb1, Vb1, Yb1)
+        pdb.set_trace()
+        if ML1 > ML0: #accept
+            for para_list, para in zip([m_list, b_list, Pb_list, Vb_list, Yb_list, ML_list], [m1, b1, Pb1, Vb1, Yb1, ML1]):
+                para_list.append(para)
+                m0, b0, Pb0, Vb0, Yb0 = m1, b1, Pb1, Vb1, Yb1
+        elif ((ML1 <= ML0) and (ML1 != 0)):
+            criterion = uniform(0, 1)
+            if ML1/ML0 > criterion: #accept
+                accept()
+        else:
+            pass
+        #print '{0} step finished, {1} points accepted'.format(i, len(ml_list))
+            
+    return m_list, b_list, Pb_list, Vb_list, Yb_list, ML_list
+
+if __name__ == '__main__':
+    (data_id, x, y, dy, dx, rho_xy) = np.loadtxt('sample_data.txt', comments = '%', unpack = True)
+    m_list, b_list, Pb_list, Vb_list, Yb_list, ML_list = MCMC(2, 0, 0.5, 200, 300, 1.0, n_step = 10000)
+       

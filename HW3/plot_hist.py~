@@ -1,0 +1,24 @@
+#! /usr/bin/env python
+import numpy as np
+import matplotlib as plt
+ffrom scipy.optimize import curve_fit
+def gauss(x, *p):
+    """
+    gaussian function
+    """
+    A, mu, sigma = p
+    return A*np.exp(-(x-mu)**2/(2.*sigma**2))
+
+def plotHist(para, p0, bars = 40):
+    """
+    plot function
+    """
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    npoints, barEdges, npatches = ax.hist(para, bins = bars)
+    bin_centers = (barEdges[:-1] + barEdges[1:])/2.
+    fittedPara, varMatrix = curvefit(gauss, bin_center, npoints, p0 = p0)
+    ax.plot(bin_centers, gauss(bin_centes, *fittedPara), '-o')
+    return fig
+
+if __

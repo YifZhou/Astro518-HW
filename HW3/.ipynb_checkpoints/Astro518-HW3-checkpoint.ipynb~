@@ -1,0 +1,137 @@
+{
+ "metadata": {
+  "name": "",
+  "signature": "sha256:56309040b9a110bd39d9b703915d1b0c13b9e5888155d2152c4445a91ed6bd17"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "# Astro518 Homework 3\n",
+      "## Markov Chain Monte Carlo"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from random import randint, random"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 15
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "(data_id, x, y, dy, dx, rho_xy) = np.loadtxt('sample_data.txt', comments = '%', unpack = True) ## readin data"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "%%time\n",
+      "## define the function\n",
+      "def MaxLikelihood(p): \n",
+      "    \"\"\"\n",
+      "    Calculate maxium likelihood value\n",
+      "    input paramter:\n",
+      "      m: gradient\n",
+      "      b: intercept\n",
+      "      Pb, Vb, Yb: bayesian analysis parameters\n",
+      "    \"\"\"\n",
+      "    \n",
+      "    global x, y, dy\n",
+      "    m, b, Pb, Vb, Yb = p\n",
+      "    y_mod = m * x + b\n",
+      "    c = 10.**48 # a constant value to normalize\n",
+      "    max_list = np.array([4.0, 150., 1., 4000., 700.]) # maximum boundary \n",
+      "    min_list = np.array([0., -150., 0., 0., 0.]) #minimum boundary\n",
+      "    if (p > max_list).any() or (p < min_list).any(): #exclude nonphysical value\n",
+      "        return 0\n",
+      "    else:\n",
+      "        return c * np.prod((1 - Pb)/np.sqrt(2 * np.pi * dy**2) * np.exp(-(y - y_mod)**2/(2 * dy**2)) \n",
+      "            + Pb/np.sqrt(2 * np.pi * (dy**2 + Vb)) * np.exp(-(y - Yb)**2/(2 * dy**2)))\n",
+      "    \n",
+      "def MCMC(p0, step, n_step = 1e5):\n",
+      "    base_length = np.array([0.004, 0.3, 0.01, 40, 7]) # set the basic step length\n",
+      "                                                      # 0.1% for m, and b\n",
+      "                                                      # 1% for p, v, y\n",
+      "    ml0 = MaxLikelihood(p0)\n",
+      "    n = 0\n",
+      "    p_new = p0\n",
+      "    para_list = []\n",
+      "    ml_list = []\n",
+      "    para_list.append(p0)\n",
+      "    ml_list.append(ml0)\n",
+      "    while(n < n_step):\n",
+      "        change_id = randint(0, 4) # randomly choose a parameter to change\n",
+      "        p_new[change_id] = p0[change_id] + step * base_length[change_id]\n",
+      "        ml = MaxLikelihood(p_new)\n",
+      "        if ml >= ml0: #accept\n",
+      "            p0 = p_new\n",
+      "            ml0 = ml\n",
+      "            para_list.append(p_new)\n",
+      "            ml_list.append(ml)\n",
+      "            n+=1\n",
+      "        elif ml < ml0:\n",
+      "            criterion = random()\n",
+      "            if ml/ml0 >= criterion: #accept\n",
+      "                p0 = p_new\n",
+      "                ml0 = ml\n",
+      "                para_list.append(p_new)\n",
+      "                ml_list.append(ml)\n",
+      "                n+=1\n",
+      "        print '{0} step finished, mostlikelihood = {1}'.format(n, ml)\n",
+      "            \n",
+      "    return para_list, ml_list\n",
+      "\n",
+      "para1, ml_list1 = MCMC(np.array([2, 0, 0.5, 200, 300]), 1.0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "ename": "KeyboardInterrupt",
+       "evalue": "",
+       "output_type": "pyerr",
+       "traceback": [
+        "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+        "\u001b[0;32m<ipython-input-16-a62ca7b7d116>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mget_ipython\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrun_cell_magic\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mu'time'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mu''\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mu'## define the function\\ndef MaxLikelihood(p): \\n    \"\"\"\\n    Calculate maxium likelihood value\\n    input paramter:\\n      m: gradient\\n      b: intercept\\n      Pb, Vb, Yb: bayesian analysis parameters\\n    \"\"\"\\n    \\n    global x, y, dy\\n    m, b, Pb, Vb, Yb = p\\n    y_mod = m * x + b\\n    c = 10.**48 # a constant value to normalize\\n    max_list = np.array([4.0, 150., 1., 4000., 700.]) # maximum boundary \\n    min_list = np.array([0., -150., 0., 0., 0.]) #minimum boundary\\n    if (p > max_list).any() or (p < min_list).any(): #exclude nonphysical value\\n        return 0\\n    else:\\n        return c * np.prod((1 - Pb)/np.sqrt(2 * np.pi * dy**2) * np.exp(-(y - y_mod)**2/(2 * dy**2)) \\n            + Pb/np.sqrt(2 * np.pi * (dy**2 + Vb)) * np.exp(-(y - Yb)**2/(2 * dy**2)))\\n    \\ndef MCMC(p0, step, n_step = 1e5):\\n    base_length = np.array([0.004, 0.3, 0.01, 40, 7]) # set the basic step length\\n                                                      # 0.1% for m, and b\\n                                                      # 1% for p, v, y\\n    ml0 = MaxLikelihood(p0)\\n    n = 0\\n    p_new = p0\\n    para_list = []\\n    para_list.append(p0)\\n    while(n < n_step):\\n        change_id = randint(0, 4) # randomly choose a parameter to change\\n        p_new[change_id] = p0[change_id] + step * base_length[change_id]\\n        ml = MaxLikelihood(p_new)\\n        if ml >= ml0: #accept\\n            p0 = p_new\\n            para_list.append(p_new)\\n            n+=1\\n        elif ml < ml0:\\n            criterion = random()\\n            if ml/ml0 >= criterion: #accept\\n                p0 = p_new\\n                para_list.append(p_new)\\n                n+=1\\n            \\n    return para_list\\n\\npara1 = MCMC(np.array([2, 0, 0.5, 200, 300]), 1.0)'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+        "\u001b[0;32m/usr/local/lib/python2.7/site-packages/IPython/core/interactiveshell.pyc\u001b[0m in \u001b[0;36mrun_cell_magic\u001b[0;34m(self, magic_name, line, cell)\u001b[0m\n\u001b[1;32m   2160\u001b[0m             \u001b[0mmagic_arg_s\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mvar_expand\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mline\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mstack_depth\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2161\u001b[0m             \u001b[0;32mwith\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mbuiltin_trap\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 2162\u001b[0;31m                 \u001b[0mresult\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfn\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmagic_arg_s\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcell\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   2163\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0mresult\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2164\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+        "\u001b[0;32m/usr/local/lib/python2.7/site-packages/IPython/core/magics/execution.pyc\u001b[0m in \u001b[0;36mtime\u001b[0;34m(self, line, cell, local_ns)\u001b[0m\n",
+        "\u001b[0;32m/usr/local/lib/python2.7/site-packages/IPython/core/magic.pyc\u001b[0m in \u001b[0;36m<lambda>\u001b[0;34m(f, *a, **k)\u001b[0m\n\u001b[1;32m    191\u001b[0m     \u001b[0;31m# but it's overkill for just that one bit of state.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    192\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mmagic_deco\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0marg\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 193\u001b[0;31m         \u001b[0mcall\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mlambda\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m*\u001b[0m\u001b[0ma\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mk\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0ma\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mk\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    194\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    195\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mcallable\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0marg\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+        "\u001b[0;32m/usr/local/lib/python2.7/site-packages/IPython/core/magics/execution.pyc\u001b[0m in \u001b[0;36mtime\u001b[0;34m(self, line, cell, local_ns)\u001b[0m\n\u001b[1;32m   1127\u001b[0m         \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1128\u001b[0m             \u001b[0mst\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mclock2\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1129\u001b[0;31m             \u001b[0;32mexec\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcode\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mglob\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mlocal_ns\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1130\u001b[0m             \u001b[0mend\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mclock2\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1131\u001b[0m             \u001b[0mout\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+        "\u001b[0;32m<timed exec>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n",
+        "\u001b[0;32m<timed exec>\u001b[0m in \u001b[0;36mMCMC\u001b[0;34m(p0, step, n_step)\u001b[0m\n",
+        "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+       ]
+      }
+     ],
+     "prompt_number": 16
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
