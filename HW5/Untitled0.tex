@@ -1,0 +1,472 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Untitled0}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+         \PY{k+kn}{from} \PY{n+nn}{\PYZus{}\PYZus{}future\PYZus{}\PYZus{}} \PY{k+kn}{import} \PY{n}{division}
+\end{Verbatim}
+
+    \section{Problem 1}\label{problem-1}
+
+According to Snell's Law:
+
+\begin{equation}
+\sin\alpha_0 = n\sin\alpha
+\end{equation}
+
+the refraction angle:
+
+\begin{equation}
+\Delta\alpha \approx -\tan\alpha_0\cdot\frac{\Delta n}{n^2}\propto\Delta n
+\end{equation}
+
+According to Cauchy Formula,
+
+\begin{align}
+\Delta n(\lambda = 0.6) = 276.0\times 10^6
+\Delta n(\lambda = 0.4) = 280.2\times 10^6
+\Delta n(\lambda = 0.8) = 274.5\times 10^6
+\end{align}
+
+Thus, the refraction angle:
+
+\begin{equation}
+\Delta = \Delta \alpha(\lambda = 0.4) - \Delta \alpha(\lambda = 0.8) = (\frac{280.2}{276.0}-\frac{274.5}{276.0})\mathrm{arcmin} = 0.053\mathrm{arcmin}
+\end{equation}
+
+    \section{Problem 2}\label{problem-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}60}]:} \PY{k}{def} \PY{n+nf}{Gauss}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{FWHM}\PY{p}{)}\PY{p}{:}
+             \PY{n}{sigma} \PY{o}{=} \PY{l+m+mf}{1.}\PY{o}{/}\PY{l+m+mf}{2.3548} \PY{o}{*} \PY{n}{FWHM}
+             \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{sigma}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{)} \PY{c}{\PYZsh{}length in arcsec, oversample}
+         \PY{n}{y} \PY{o}{=} \PY{n}{Gauss}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{l+m+mf}{1.}\PY{p}{)}
+         
+         \PY{k}{def} \PY{n+nf}{centroidErr}\PY{p}{(}\PY{n}{pixelSize}\PY{p}{)}\PY{p}{:}
+             \PY{n}{pixelCenter} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.75}\PY{o}{*}\PY{n}{pixelSize}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{o}{+}\PY{n}{pixelSize}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{pixelSize}\PY{p}{)}\PY{p}{,} 
+                                       \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.25}\PY{o}{*}\PY{n}{pixelSize}\PY{p}{,} \PY{l+m+mi}{10} \PY{o}{\PYZhy{}}\PY{n}{pixelSize}\PY{p}{,} \PY{n}{pixelSize}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n}{pixelFlux} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{pxCenter} \PY{o+ow}{in} \PY{n}{pixelCenter}\PY{p}{:}
+                 \PY{c}{\PYZsh{} flux for one pixel can be devided into three part}
+                 \PY{n}{flux1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{0.9} \PY{o}{*} \PY{n}{y}\PY{p}{[}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}} \PY{n}{pxCenter} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{n}{pxCenter} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.45} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{flux2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{y}\PY{p}{[}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}} \PY{n}{pxCenter} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.45} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{n}{pxCenter} \PY{o}{+} \PY{l+m+mf}{0.45} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{flux3} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{l+m+mf}{0.9} \PY{o}{*} \PY{n}{y}\PY{p}{[}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}} \PY{n}{pxCenter} \PY{o}{+} \PY{l+m+mf}{0.45} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{n}{pxCenter} \PY{o}{+} \PY{l+m+mf}{0.45} \PY{o}{*} \PY{n}{pixelSize}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+                 \PY{n}{pixelFlux}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{flux1} \PY{o}{+} \PY{n}{flux2} \PY{o}{+} \PY{n}{flux3}\PY{p}{)}
+             \PY{n}{pixelFlux} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{pixelFlux}\PY{p}{)}
+             \PY{n}{cMeasured} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{pixelCenter} \PY{o}{*} \PY{n}{pixelFlux}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{pixelFlux}\PY{p}{)}
+             \PY{k}{return} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{cMeasured}\PY{p}{)}
+         
+         \PY{n}{psList} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+         \PY{n}{errList} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{n}{centroidErr}\PY{p}{,} \PY{n}{psList}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{psList}\PY{p}{,}\PY{n}{errList}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{l+m+mf}{0.01}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Pixel size (arcsec)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Centroid Error (arcsec)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}60}]:} <matplotlib.text.Text at 0x10c7fc250>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Untitled0_files/Untitled0_3_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Above script calculates the centroid measurement error as a function of
+pixel size. According to the plot, the sample size should be smaller
+than 0.4 arcsec so that the centroid can be measured as precise as 0.01
+arcsec
+
+    \section{Problem 3}\label{problem-3}
+
+table assembled as below
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}75}]:} \PY{n}{df0} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{table0.csv}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{type}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{usecols} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+         \PY{n}{df1} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{table1.csv}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{usecols} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{df0}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n}{string}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{string} \PY{o+ow}{in} \PY{n}{df0}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{values}\PY{p}{]}
+         \PY{n}{df1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n}{string}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{string} \PY{o+ow}{in} \PY{n}{df1}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{values}\PY{p}{]}
+         \PY{n}{total} \PY{o}{=}\PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{df0}\PY{p}{,} \PY{n}{df1}\PY{p}{,} \PY{n}{on} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{J\PYZhy{}K(KM)}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{total}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}75}]:}        name       type  Jmag\_x  Kmag\_x  Jmag\_y  Kmag\_y  J-K(KM)
+         0   HR 1256     K0III     2.63    1.97   2.575  1.9750   0.6000
+         1   HR 1286  K1II-III     3.36    2.49   3.177  2.4000   0.7770
+         2   HR 1791     B7III     1.97    2.05   1.868  1.9560  -0.0880
+         3   HR 1907    K0IIIb     2.35    1.69   2.282  1.6840   0.5980
+         4   HR 1963     K1III     2.89    2.11   2.797  2.0700   0.7270
+         5   HR 2077     K0III     2.09    1.46   1.970  1.4000   0.5700
+         6   HR 2427     K3Iab     2.79    2.05   2.731  2.0520   0.6790
+         7   HR 2560  G5III-IV     2.89    2.33   2.810  2.3160   0.4940
+         8   HR 3003     K4III     2.28    1.33   2.190  1.3000   0.8900
+         9   HR 4335     K1III     1.16    0.44   1.095  0.4240   0.6710
+         10  HR 4377     K3III     1.18    0.31   1.092  0.2740   0.8180
+         11  HR 4608    G8IIIa     2.48    1.90   2.435  1.9877   0.4473
+         12  HR 4737     K1III     2.55    1.90   2.473  1.8710   0.6020
+         13  HR 4983     F9.5V     3.24    2.90   3.166  2.8730   0.2930
+         14  HR 5107       A3V     3.20    3.11   3.099  3.0720   0.0270
+         15  HR 5854    K2IIIb     0.76    0.06   0.713  0.0790   0.6340
+         16  HR 5947     K2III     2.09    1.30   2.010  1.2840   0.7260
+         17  HR 6623      G5IV     2.18    1.77   2.127  1.7390   0.3880
+         18  HR 6698     G9III     1.68    1.12   1.721  1.1830   0.5380
+         19  HR 6705     K5III    -0.39   -1.34  -0.430 -1.3100   0.8800
+         20  HR 6707      F2II     3.55    3.23   3.500  3.2200   0.2800
+         21  HR 7236      B9Vn     3.64    3.67   3.559  3.6000  -0.0410
+         22  HR 7525      K3II     0.30   -0.59   0.208 -0.6400   0.8480
+         23  HR 7557       A7V     0.39    0.26   0.327  0.2050   0.1220
+         24  HR 7615     K0III     2.28    1.67   2.205  1.6530   0.5520
+         25  HR 7949     K0III     0.77    0.11   0.683  0.0800   0.6030
+         26  HR 8143     B9Iab     3.95    3.79   3.850  3.7400   0.1100
+         27  HR 8632     K2III     2.36    1.51   2.240  1.4600   0.7800
+         28  HR 8905      F8IV     3.37    3.02   3.308  2.9730   0.3350
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}79}]:} \PY{c}{\PYZsh{}Linear Fit}
+         \PY{c}{\PYZsh{}For J}
+         \PY{n}{JK} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+         \PY{n}{mJ}\PY{p}{,} \PY{n}{bJ} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{polyfit}\PY{p}{(} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{J\PYZhy{}K(KM)}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag\PYZus{}x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{J\PYZhy{}K(KM)}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag\PYZus{}x}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Jmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{.}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{JK}\PY{p}{,} \PY{n}{mJ}\PY{o}{*}\PY{n}{JK} \PY{o}{+} \PY{n}{bJ}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{J \PYZhy{} K color (KM)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}J\PYZus{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{mathrm\PYZob{}J\PYZcb{} \PYZhy{} J\PYZus{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{mathrm\PYZob{}KM\PYZcb{}\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{J = \PYZob{}0:.3f\PYZcb{} * ((J\PYZhy{}K)(KM)) + J(KM) + \PYZob{}1:.3f\PYZcb{}}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{mJ}\PY{p}{,} \PY{n}{bJ}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}79}]:} <matplotlib.text.Text at 0x10c84d210>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Untitled0_files/Untitled0_7_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}81}]:} \PY{n}{mK}\PY{p}{,} \PY{n}{bK} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{polyfit}\PY{p}{(} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{J\PYZhy{}K(KM)}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag\PYZus{}x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{J\PYZhy{}K(KM)}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag\PYZus{}x}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{total}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kmag\PYZus{}y}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{.}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{JK}\PY{p}{,} \PY{n}{mK}\PY{o}{*}\PY{n}{JK} \PY{o}{+} \PY{n}{bK}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{J \PYZhy{} K color (KM)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}K\PYZus{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{mathrm\PYZob{}J\PYZcb{} \PYZhy{} K\PYZus{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{mathrm\PYZob{}KM\PYZcb{}\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{text}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{K = \PYZob{}0:.3f\PYZcb{} * ((J\PYZhy{}K)(KM)) + K(KM) + \PYZob{}1:.3f\PYZcb{}}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{mK}\PY{p}{,} \PY{n}{bK}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}81}]:} <matplotlib.text.Text at 0x10fd8bf10>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Untitled0_files/Untitled0_8_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    With linear fit of J and K magnitude difference with KM's J-K color,
+Johnson's magnitude can be expressed as above.
+
+    \section{Problem 4}\label{problem-4}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  According to the plot in Problem 3, the precision can be around 0.1
+  magntiude.
+\item
+  For vega, J-K color equals 0. According to the plot above, Vega has a
+  J magnitude of -0.05 and K magnitude of -0.02. Vega changes because it
+  is a fasting rotate star and varies a lot.
+\end{enumerate}
+
+    \section{Problem 5}\label{problem-5}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  determined by integrating the source spectrum over the filter
+  passband(if $f = a\lambda^{-4}d\lambda$):
+\end{itemize}
+
+\begin{equation}
+\begin{split}
+I &= a\int_{\lambda_1}^{lambda_2} \lambda^{-4}d\lambda\\
+&=\frac{a}{3}\left(\frac{1}{(\lambda - \Delta/2)^3}-\frac{1}{(\lambda_2+\Delta/2)^3}\right)\\
+&=\frac{a}{3\lambda^3}\left[1+3\left(\frac{\Delta}{2\lambda}\right) + \frac{3\times4}{2!}\left(\frac{\Delta}{2\lambda}\right)^2+ \frac{3\times4\times5}{3!}\left(\frac{\Delta}{2\lambda}\right)^3+\cdots\right] - \frac{a}{3\lambda^3}\left[1-3\left(\frac{\Delta}{2\lambda}\right) + \frac{3\times4}{2!}\left(\frac{\Delta}{2\lambda}\right)^2-\frac{3\times4\times5}{3!}\left(\frac{\Delta}{2\lambda}\right)^3+\cdots\right]\\
+&=a\frac{\Delta}{\lambda^4}\left[1+\frac{5}{6}\left(\frac{\Delta}{\lambda}\right)^2\right] + O\left(\frac{\Delta^4}{\lambda^4}\right)
+\end{split}
+\end{equation}
+
+    \section{Problem 6}\label{problem-6}
+
+B-V color is 0.68, thus
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  $T_\mathrm{eff} = 5560K$
+\item
+  absolute V band magnitude is $M_\mathrm{V} = 5.1$
+\item
+  Distance:
+\end{itemize}
+
+\begin{equation}
+D = 10^{\frac{m_V - M_V + 5}{5}} = 10^{(7.02 - 5.1 +5)/5} = 24.2 \mathrm{pc}
+\end{equation}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Bolometric magnitude: $M_\mathrm{bol} = M_\mathrm{V} + BC = 4.89$
+\item
+  Luminosity:
+\end{itemize}
+
+\begin{equation}
+L = 10^{(M_{\mathrm{bol},\odot} - M_\mathrm{bol})/2.5} L_\odot= 10^{(4.75 - 4.89)/2.5}L_\odot = 0.88L_\odot
+\end{equation}
+
+    \section{Problem 7}\label{problem-7}
+
+use two half wave plate would rotate the position angle with
+$180^\circ$, that is two say it would be the same as there is no half
+wave plate
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
