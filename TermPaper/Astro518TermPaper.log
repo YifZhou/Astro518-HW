@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2014.10.6)  30 NOV 2014 00:51
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014) (preloaded format=xelatex 2014.10.6)  30 NOV 2014 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -110,33 +110,33 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 (./Astro518TermPaper.aux)
 \openout1 = `Astro518TermPaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 AAS preprint substyle, v5.2 <12 Dec 2003>.
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for U+lasy on input line 49.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 51.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -148,31 +148,25 @@ Plotone included the file NIRCam-optics
 File: NIRCam-optics.png Graphic file (type QTm)
 <use  "NIRCam-optics.png" >
 
-LaTeX Warning: Float too large for page by 62.1827pt on input line 82.
+LaTeX Warning: Float too large for page by 85.38278pt on input line 85.
 
 Missing character: There is no ” in font cmr12!
 
-Overfull \hbox (3.75551pt too wide) in paragraph at lines 115--117
+Overfull \hbox (3.75551pt too wide) in paragraph at lines 119--121
 []\OT1/cmr/m/n/12 The four 256$\OMS/cmsy/m/n/12 ^^B$\OT1/cmr/m/n/12 256 Fo-cal 
 Plane Ar-rays can be read out with dif-fer-ent op-er-a-tion mode.They
  []
 
 [3] [4] [5] [6]
-
-LaTeX Warning: Reference `fig:nircam-sen' on page 7 undefined on input line 198
-.
-
-
-LaTeX Warning: Reference `fig:nircam-sen' on page 7 undefined on input line 199
-.
-
 Page 1 of table 2 has been set to width 268.01602pt with 23 lines per page 
 
-Overfull \hbox (469.75499pt too wide) in paragraph at lines 212--223
+Overfull \hbox (469.75499pt too wide) in paragraph at lines 216--227
  [][][] 
  []
 
-[7] [8]
+Plotone included the file NIRCam_sensitivity
+File: NIRCam_sensitivity.png Graphic file (type QTm)
+<use  "NIRCam_sensitivity.png" > [7] [8] [9] [10]
 Plotone included the file second_eclipse
 File: second_eclipse.png Graphic file (type QTm)
 <use  "second_eclipse.png" >
@@ -182,23 +176,30 @@ Missing character: There is no ’ in font cmr12!
 Plotone included the file irac-lc2
 File: irac-lc2.png Graphic file (type QTm)
 <use  "irac-lc2.png" >
-Overfull \hbox (31.8648pt too wide) in paragraph at lines 276--280
-\OT1/cmr/m/n/12 eclipse pho-tom-e-try with model spec-trum, wa-ter and dust clo
-ud fea-ture can be traced citeO'Donovan
- []
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 316.
 
-[9] [10] [11] [12] (./Astro518TermPaper.aux)
 
-LaTeX Warning: There were undefined references.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 316.
+ [11] [12]
+[13] [14]
+Plotone included the file NIRSpec
+File: NIRSpec.png Graphic file (type QTm)
+<use  "NIRSpec.png" >
 
- ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] (./Astro518TermPaper.bbl [16] [17] [18]) [19] (./Astro518TermPaper.aux) ) 
 Here is how much of TeX's memory you used:
- 1832 strings out of 493724
- 21403 string characters out of 6145899
- 78690 words of memory out of 5000000
- 5166 multiletter control sequences out of 15000+600000
- 10031 words of font info for 40 fonts, out of 8000000 for 9000
+ 1911 strings out of 493724
+ 22983 string characters out of 6145899
+ 79813 words of memory out of 5000000
+ 5233 multiletter control sequences out of 15000+600000
+ 12048 words of font info for 51 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 32i,8n,28p,237b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,8n,34p,815b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Astro518TermPaper.pdf (12 pages).
+Output written on Astro518TermPaper.pdf (19 pages).

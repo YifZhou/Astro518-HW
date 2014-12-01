@@ -7,10 +7,16 @@
     "latex2e"
     "aastex"
     "aastex12"
-    "graphicx")
+    "graphicx"
+    "natbib")
    (LaTeX-add-labels
     "fig:optics"
+    "sec:performance"
     "tab:irac-sen"
+    "fig:nircam-sen"
     "fig:irac-lc"
-    "fig:iraf-lc2")))
+    "fig:iraf-lc2"
+    "fig:spec")
+   (LaTeX-add-bibliographies
+    "ref.bib")))
 

@@ -1,0 +1,145 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Beichman} et~al.(2012){Beichman}, {Rieke}, {Eisenstein}, {Greene},
+  {Krist}, {McCarthy}, {Meyer}, and {Stansberry}]{2012SPIE.8442E..2NB}
+C.~A. {Beichman}, M.~{Rieke}, D.~{Eisenstein}, T.~P. {Greene}, J.~{Krist},
+  D.~{McCarthy}, M.~{Meyer}, and J.~{Stansberry}.
+\newblock {Science opportunities with the near-IR camera (NIRCam) on the James
+  Webb Space Telescope (JWST)}.
+\newblock In \emph{Society of Photo-Optical Instrumentation Engineers (SPIE)
+  Conference Series}, volume 8442 of \emph{Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}, page~2, Sept. 2012.
+\newblock \doi{10.1117/12.925447}.
+
+\bibitem[{Burriesci}(2005)]{2005SPIE.5904...21B}
+L.~G. {Burriesci}.
+\newblock {NIRCam instrument overview}.
+\newblock In J.~B. {Heaney} and L.~G. {Burriesci}, editors, \emph{Cryogenic
+  Optical Systems and Instruments XI}, volume 5904 of \emph{Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, pages
+  21--29, Aug. 2005.
+\newblock \doi{10.1117/12.613596}.
+
+\bibitem[{Burrows}(2014)]{2014PNAS..11112601B}
+A.~S. {Burrows}.
+\newblock {Spectra as windows into exoplanet atmospheres}.
+\newblock \emph{Proceedings of the National Academy of Science}, 111:\penalty0
+  12601--12609, Sept. 2014.
+\newblock \doi{10.1073/pnas.1304208111}.
+
+\bibitem[{Charbonneau} et~al.(2005){Charbonneau}, {Allen}, {Megeath}, {Torres},
+  {Alonso}, {Brown}, {Gilliland}, {Latham}, {Mandushev}, {O'Donovan}, and
+  {Sozzetti}]{2005ApJ...626..523C}
+D.~{Charbonneau}, L.~E. {Allen}, S.~T. {Megeath}, G.~{Torres}, R.~{Alonso},
+  T.~M. {Brown}, R.~L. {Gilliland}, D.~W. {Latham}, G.~{Mandushev}, F.~T.
+  {O'Donovan}, and A.~{Sozzetti}.
+\newblock {Detection of Thermal Emission from an Extrasolar Planet}.
+\newblock \emph{\apj}, 626:\penalty0 523--529, June 2005.
+\newblock \doi{10.1086/429991}.
+
+\bibitem[{Fazio} et~al.(2004){Fazio}, {Hora}, {Allen}, {Ashby}, {Barmby},
+  {Deutsch}, {Huang}, {Kleiner}, {Marengo}, {Megeath}, {Melnick}, {Pahre},
+  {Patten}, {Polizotti}, {Smith}, {Taylor}, {Wang}, {Willner}, {Hoffmann},
+  {Pipher}, {Forrest}, {McMurty}, {McCreight}, {McKelvey}, {McMurray}, {Koch},
+  {Moseley}, {Arendt}, {Mentzell}, {Marx}, {Losch}, {Mayman}, {Eichhorn},
+  {Krebs}, {Jhabvala}, {Gezari}, {Fixsen}, {Flores}, {Shakoorzadeh}, {Jungo},
+  {Hakun}, {Workman}, {Karpati}, {Kichak}, {Whitley}, {Mann}, {Tollestrup},
+  {Eisenhardt}, {Stern}, {Gorjian}, {Bhattacharya}, {Carey}, {Nelson},
+  {Glaccum}, {Lacy}, {Lowrance}, {Laine}, {Reach}, {Stauffer}, {Surace},
+  {Wilson}, {Wright}, {Hoffman}, {Domingo}, and {Cohen}]{2004ApJS..154...10F}
+G.~G. {Fazio}, J.~L. {Hora}, L.~E. {Allen}, M.~L.~N. {Ashby}, P.~{Barmby},
+  L.~K. {Deutsch}, J.-S. {Huang}, S.~{Kleiner}, M.~{Marengo}, S.~T. {Megeath},
+  G.~J. {Melnick}, M.~A. {Pahre}, B.~M. {Patten}, J.~{Polizotti}, H.~A.
+  {Smith}, R.~S. {Taylor}, Z.~{Wang}, S.~P. {Willner}, W.~F. {Hoffmann}, J.~L.
+  {Pipher}, W.~J. {Forrest}, C.~W. {McMurty}, C.~R. {McCreight}, M.~E.
+  {McKelvey}, R.~E. {McMurray}, D.~G. {Koch}, S.~H. {Moseley}, R.~G. {Arendt},
+  J.~E. {Mentzell}, C.~T. {Marx}, P.~{Losch}, P.~{Mayman}, W.~{Eichhorn},
+  D.~{Krebs}, M.~{Jhabvala}, D.~Y. {Gezari}, D.~J. {Fixsen}, J.~{Flores},
+  K.~{Shakoorzadeh}, R.~{Jungo}, C.~{Hakun}, L.~{Workman}, G.~{Karpati},
+  R.~{Kichak}, R.~{Whitley}, S.~{Mann}, E.~V. {Tollestrup}, P.~{Eisenhardt},
+  D.~{Stern}, V.~{Gorjian}, B.~{Bhattacharya}, S.~{Carey}, B.~O. {Nelson},
+  W.~J. {Glaccum}, M.~{Lacy}, P.~J. {Lowrance}, S.~{Laine}, W.~T. {Reach},
+  J.~A. {Stauffer}, J.~A. {Surace}, G.~{Wilson}, E.~L. {Wright}, A.~{Hoffman},
+  G.~{Domingo}, and M.~{Cohen}.
+\newblock {The Infrared Array Camera (IRAC) for the Spitzer Space Telescope}.
+\newblock \emph{\apjs}, 154:\penalty0 10--17, Sept. 2004.
+\newblock \doi{10.1086/422843}.
+
+\bibitem[{Fortney} et~al.(2013){Fortney}, {Mordasini}, {Nettelmann}, {Kempton},
+  {Greene}, and {Zahnle}]{2013ApJ...775...80F}
+J.~J. {Fortney}, C.~{Mordasini}, N.~{Nettelmann}, E.~M.-R. {Kempton}, T.~P.
+  {Greene}, and K.~{Zahnle}.
+\newblock {A Framework for Characterizing the Atmospheres of Low-mass
+  Low-density Transiting Planets}.
+\newblock \emph{\apj}, 775:\penalty0 80, Sept. 2013.
+\newblock \doi{10.1088/0004-637X/775/1/80}.
+
+\bibitem[{Green} et~al.(2005){Green}, {Beichman}, {Basinger}, {Horner},
+  {Meyer}, {Redding}, {Rieke}, and {Trauger}]{2005SPIE.5905..185G}
+J.~J. {Green}, C.~{Beichman}, S.~A. {Basinger}, S.~{Horner}, M.~{Meyer}, D.~C.
+  {Redding}, M.~{Rieke}, and J.~T. {Trauger}.
+\newblock {High contrast imaging with the JWST NIRCAM coronagraph}.
+\newblock In D.~R. {Coulter}, editor, \emph{Techniques and Instrumentation for
+  Detection of Exoplanets II}, volume 5905 of \emph{Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}, pages 185--195, Aug.
+  2005.
+\newblock \doi{10.1117/12.619343}.
+
+\bibitem[{Hora} et~al.(2012){Hora}, {Marengo}, {Park}, {Wood}, {Hoffmann},
+  {Lowrance}, {Carey}, {Surace}, {Krick}, {Glaccum}, {Ingalls}, {Laine},
+  {Fazio}, {Ashby}, and {Wang}]{2012SPIE.8442E..39H}
+J.~L. {Hora}, M.~{Marengo}, R.~{Park}, D.~{Wood}, W.~F. {Hoffmann}, P.~J.
+  {Lowrance}, S.~J. {Carey}, J.~A. {Surace}, J.~E. {Krick}, W.~J. {Glaccum},
+  J.~G. {Ingalls}, S.~{Laine}, G.~G. {Fazio}, M.~L.~N. {Ashby}, and Z.~{Wang}.
+\newblock {The IRAC point response function in the warm Spitzer mission}.
+\newblock In \emph{Society of Photo-Optical Instrumentation Engineers (SPIE)
+  Conference Series}, volume 8442 of \emph{Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}, page~39, Sept. 2012.
+\newblock \doi{10.1117/12.926894}.
+
+\bibitem[{Huff}(2005)]{2005SPIE.5904...30H}
+L.~W. {Huff}.
+\newblock {NIRCam instrument optics}.
+\newblock In J.~B. {Heaney} and L.~G. {Burriesci}, editors, \emph{Cryogenic
+  Optical Systems and Instruments XI}, volume 5904 of \emph{Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, pages
+  30--37, Aug. 2005.
+\newblock \doi{10.1117/12.619909}.
+
+\bibitem[{Knutson} et~al.(2007){Knutson}, {Charbonneau}, {Allen}, {Fortney},
+  {Agol}, {Cowan}, {Showman}, {Cooper}, and {Megeath}]{2007Natur.447..183K}
+H.~A. {Knutson}, D.~{Charbonneau}, L.~E. {Allen}, J.~J. {Fortney}, E.~{Agol},
+  N.~B. {Cowan}, A.~P. {Showman}, C.~S. {Cooper}, and S.~T. {Megeath}.
+\newblock {A map of the day-night contrast of the extrasolar planet HD
+  189733b}.
+\newblock \emph{\nat}, 447:\penalty0 183--186, May 2007.
+\newblock \doi{10.1038/nature05782}.
+
+\bibitem[{Krist} et~al.(2007){Krist}, {Beichman}, {Trauger}, {Rieke},
+  {Somerstein}, {Green}, {Horner}, {Stansberry}, {Shi}, {Meyer}, {Stapelfeldt},
+  and {Roellig}]{2007SPIE.6693E..0HK}
+J.~E. {Krist}, C.~A. {Beichman}, J.~T. {Trauger}, M.~J. {Rieke},
+  S.~{Somerstein}, J.~J. {Green}, S.~D. {Horner}, J.~A. {Stansberry}, F.~{Shi},
+  M.~R. {Meyer}, K.~R. {Stapelfeldt}, and T.~L. {Roellig}.
+\newblock {Hunting planets and observing disks with the JWST NIRCam
+  coronagraph}.
+\newblock In \emph{Society of Photo-Optical Instrumentation Engineers (SPIE)
+  Conference Series}, volume 6693 of \emph{Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}, page~0, Sept. 2007.
+\newblock \doi{10.1117/12.734873}.
+
+\bibitem[{O'Donovan} et~al.(2010){O'Donovan}, {Charbonneau}, {Harrington},
+  {Madhusudhan}, {Seager}, {Deming}, and {Knutson}]{2010ApJ...710.1551O}
+F.~T. {O'Donovan}, D.~{Charbonneau}, J.~{Harrington}, N.~{Madhusudhan},
+  S.~{Seager}, D.~{Deming}, and H.~A. {Knutson}.
+\newblock {Detection of Planetary Emission from the Exoplanet Tres-2 Using
+  Spitzer/IRAC}.
+\newblock \emph{\apj}, 710:\penalty0 1551--1556, Feb. 2010.
+\newblock \doi{10.1088/0004-637X/710/2/1551}.
+
+\end{thebibliography}
