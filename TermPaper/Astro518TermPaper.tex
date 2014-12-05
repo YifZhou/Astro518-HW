@@ -1,33 +1,25 @@
-\documentclass[preprint, 12pt]{aastex}
-\synctex=1
-\usepackage{graphicx}
-\usepackage{natbib}
-\shorttitle{Instrumentation Term Paper}
-\shortauthors{Yifan Zhou}
-\slugcomment{Astro 518 Term Paper}
-\doublespace
+\documentclass[preprint, 12pt]{aastex} \synctex=1
+\usepackage{graphicx} \usepackage{natbib} \shorttitle{Instrumentation
+Term Paper} \shortauthors{Yifan Zhou} \slugcomment{Astro 518 Term
+Paper} \doublespace
 
-\begin{document}
-\bibliographystyle{abbrvnat}
-\title{Instrumentation Term Paper}
-\author{Yifan Zhou}
-\affil{University of Arizona}
-\email{yifzhou@email.arizona.edu}
+\begin{document} \bibliographystyle{abbrvnat} \title{Comparison of
+Spitzer IRAC and JWST NIRCam} \author{Yifan Zhou} \affil{University of
+Arizona} \email{yifzhou@email.arizona.edu}
 
-\section{Introduction}
-Infrared Array Camera (IRAC) is the near infrared imaging instrument equipped
-on Spitzer Space Telescope. NIRCam is the imaging camera on James Webb
-Space Telescope (JWST). I listed the general design and performance
-comparison of these two instrument to illustrate the big leap of
-NIRCam comparing to IRAC.
+\section{Introduction} Infrared Array Camera (IRAC) is the near
+infrared imaging instrument equipped on Spitzer Space
+Telescope. NIRCam is the imaging camera on James Webb Space Telescope
+(JWST). I listed the general design of these instruments and compared
+their performance.
 
-Although exoplanet observation is not the key factor in defining
-the IRAC desgin \citep{2004ApJS..154...10F}, astronomers made great progress in detecting and
-characterizing exoplanet with the help of IRAC. I listed several key
-discoveries in exoplanet with IRAC to demonstrate what aspect of IRAC
-is made use of in exoplanet studies. With the comparison of optical
-performance, we can see the potential of NIRCam in exoplanet
-observations. 
+Although exoplanet observation is not the key factor in defining the
+IRAC desgin \citep{2004ApJS..154...10F}, astronomers made great
+progress in detecting and characterizing exoplanet with the help of
+IRAC. I listed several key discoveries in exoplanet with IRAC to
+demonstrate what features of IRAC is employed in exoplanet
+studies. With the performance comparison, we can see the potential of
+NIRCam in exoplanet observations.
 %\section{Scientific Requirements}
 
 \section{Instrumentation Design}
@@ -36,34 +28,34 @@ observations.
 The optical design of Spitzer IRAC and JWST NIRCam are demonstrated in
 figure \ref{fig:optics}.\par
 
-\subsubsection{IRAC}
-The optics path of IRAC is relatively simple comparing to that of
-NIRCam. Two pickoff mirrors that are slightly displaced and tilted
-separate the light into two beams. Each reflected beam then passes
-doublet lenses to be reimaged at the focal plane. After the doublet
-lenses, two Ge substrate beam splitters separate the lower beam into
-Channel 1 (reflected) and Channel 3 (transmitted) and the upper beam
-into Channel 2 (reflected) and Channel 4 (transmitted). Finally 4
-Channels of light are received by 4 detectors accordingly. This design
-enables IRAC to take image in 4 different bands simultaneously.\par
+\subsubsection{IRAC} The optics path of IRAC is relatively simple
+comparing to that of NIRCam. Two pickoff mirrors that are slightly
+displaced and tilted separate the light into two beams. Each reflected
+beam then passes doublet lenses and is reimaged at the focal
+plane. After the doublet lenses, two Ge substrate beam splitters
+separate the lower beam into Channel 1 (reflected) and Channel 3
+(transmitted) and the upper beam into Channel 2 (reflected) and
+Channel 4 (transmitted). Finally 4 Channels of light are received by 4
+detectors accordingly \citep{2004ApJS..154...10F}.\par
 
-\subsubsection{NIRCam}
-NIRCam consists of two modules, each imaging a $2.16' \times 2.16'$
-field of view.  The modules are built on two optical benches mounted
-back-to-back. As a result, the two fields of views imaged by the
-modules are adjacent.  The modules are functionally identical, with
-identical optical and focal plane components. They are mirror images
-of each other except for coronagraphic pupil masks.
+\subsubsection{NIRCam} NIRCam consists of two modules, each imaging a
+$2.16' \times 2.16'$ field of view.  The modules are built on two
+optical benches mounted back-to-back. As a result, the two fields of
+views imaged by the modules are adjacent.  The modules are
+functionally identical, with identical optical and focal plane
+components. They are mirror images of each other except for
+coronagraphic pupil masks \citep{2005SPIE.5904...30H}.
 
-The optical design of each module is shown in figure
-\ref{fig:optics}. There are more devices on the optics path of NIRCam to enable
-different observation mode. After reflection of pickoff mirror and
-first fold mirror, the light are then split by a dichroic
+The optical design of each module is shown in the lower panel of figure
+\ref{fig:optics}. Comparing to IRAC, more devices are deployed on the optics path of NIRCam
+so that different types of observation can be accomplished. After reflection of pickoff
+mirror and first fold mirror, the light are then split by a dichroic
 beam-splitter into long wave beam and short wave beam. Before the two
-beams reach the detector, two filter wheels are equipped on the paths
-so that multi-band imaging can be accomplished. After the pick-off
+beams reach the detectors, two filter wheels are equipped on the paths
+to enable multi-band imaging observation. After the pick-off
 mirror, there is a coronagraph elements to provide NIRCam the ability
-to make coronagraphic measurements.
+to make coronagraphic measurements. NIRCam also has a grism to work on
+spectroscopic observation.
 
 Several optical elements are added or specially designed for optical
 accuracy improvement. The pickoff mirror is actuated by a three
@@ -80,18 +72,18 @@ source are used to aid with on-orbit calibration and characterization.
   \plotone{IRAC-optics}
   \plotone{NIRCam-optics}
   \caption{Optical Design of Spitzer IRAC (above)
-    \citep{2004ApJS..154...10F} and JWST NIRCam (below) \citep{2005SPIE.5904...30H}.}
+    \citep{2004ApJS..154...10F} and JWST NIRCam (below)
+    \citep{2005SPIE.5904...30H}.}
   \label{fig:optics}
 \end{figure}
 
 \subsection{Focal Plane Array}
 
-\subsubsection{IRAC}
-IRAC has 4 detector arrays to recieve photons in 4 channels. The 4
-arrays are all 256$\times$256 pixels in size and have the same
-physical pixel size of 30 $\mu$m. The channel 1 and channel 2 arrays
-are made of InSb while the longer wavelength channels 3 and 4 are
-Si:As detectors\citep{2004ApJS..154...10F}.
+\subsubsection{IRAC} IRAC has 4 detector arrays to receive photons in
+4 channels. The 4 arrays are all 256$\times$256 pixels in size and
+have the same physical pixel size of 30 $\mu$m. The channel 1 and
+channel 2 arrays are made of InSb while the longer wavelength channels
+3 and 4 are Si:As detectors\citep{2004ApJS..154...10F}.
 
 
 \subsubsection{NIRCam}
@@ -105,24 +97,25 @@ identical.  The sensitive area of a chip is 2040x2040 pixels, due to a
 4 pixel wide border of reference pixels along all edges. Reference
 pixels are used for tracking bias drifts during an exposure.  The
 finer pixel scale of the short-wavelength channels requires a Focal
-Plane Array, i.e. a 2x2 mosaic of chips butted with a small gap (5”)
+Plane Array, i.e. a $2\times2$ mosaic of chips butted with a small gap ($5''$)
 between them \citep{2005SPIE.5904...21B}. The resulting gaps in the
 images have to be filled by dithering moves of the telescope. The long
 wavelength channels use a single chip.  The fields observed by the two
-modules are adjacent with about 50" separation. Also this larger gap
+modules are adjacent with about $50''$ separation. Also this larger gap
 in the images has to be filled by dithering moves.
 
 
 \subsection{Operation Mode}
 \subsubsection{IRAC}
 
-The four 256$\times$256 Focal Plane Arrays can be read out with different
-operation mode.They are full-array readout mode, stellar photometry
-mode and subarray mode.\par
+The four 256$\times$256 Focal Plane Arrays can be read out with
+different operation mode.They are full-array readout mode, stellar
+photometry mode and subarray mode.\par
 
 In full-array readout mode, there were four selectable frame times: 2,
-12, 30, and 100 s \citep{2004ApJS..154...10F}. To allow sensitive observations without losing dynamic
-range, there was a high dynamic range (HDR) option. 
+12, 30, and 100 s \citep{2004ApJS..154...10F}. To allow sensitive
+observations without losing dynamic range, there was a high dynamic
+range option.
 
 Stellar photometry mode was available for observations of objects much
 brighter in channels 1 and 2 than in 3 and 4 (typically stars). This
@@ -135,85 +128,82 @@ only a small $32 \times 32$ pixel portion of the array was read out,
 so the field of view was only $38' \times 38'$. Mapping was not
 allowed in subarray mode.  In subarray readout mode, there were three
 selectable frame times: 0.02, 0.1, and 0.4 sec. This mode allows
-observer to catch fast variability of the targets.
+observer to catch fast variability of the targets \citep{2004ApJS..154...10F}.
 
 
-\subsubsection{NIRCam}
-Comparing to IRAC, NIRCam equipped with much more complicated devices,
-which allows different observation to be made with.
+\subsubsection{NIRCam} Comparing to IRAC, NIRCam equipped with 
+more complicated devices, which allows different observation to be
+done. 
 
 The primary purpose of the NIRCam instrument is to take image
 measurement. For imaging observation, the major difference from IRAC
-is that both short wave and long wave channels of NIRCam are furnished
+is that both short wavelength and long wavelength channels of NIRCam are furnished
 with a Filter Wheel that allows for observations through more than 12
 different spectral bands. There are totally 30 filters on NIRCam,
-whose wavelength covers from 0.7 to 4.8 $\mu$m. 
+whose wavelength covers from 0.7 to 4.8 $\mu$m.
 
 Another unique feature of NIRCam is the ability to make Coronagraphic
 measurements. In coronagraphic mode, a coronagraphic occulting mask
-that can be chosen from a selection of $\mathrm{sinc}^{2}$, top-hat, and Gaussian
-designs, optimized for light at either 2.0 or 4.6 $\mu m$ block the
-light from the bright sources. This mode is essential in high contrast
-imaging observation, e.g. direct imaging of exoplanets.
+that can be chosen from a selection of $\mathrm{sinc}^{2}$, top-hat,
+and Gaussian designs, optimized for light at either 2.0 or 4.6 $\mu m$
+blocks the light from the bright sources. This mode is essential in
+high contrast imaging observation, e.g. direct imaging of exoplanets.
 
 NIRCam is also available for spectroscopic observation. NIRCam has a
-grism in the long wavelength channel. The grism offers the capability to
-carry out slitless spectroscopy in the wavelength range 2.4 to 5 $\mu$m,
-with spectroscopic resolution R $\sim 2000$.
+grism in the long wavelength channel. The grism offers the capability
+to carry out slitless spectroscopy in the wavelength range 2.4 to 5
+$\mu$m, with spectroscopic resolution R $\sim 2000$.
 
 
 \section{Instrument Performance}
-\label{sec:performance}
-As a detector equipped on the next generation infrared space
-telescope, NIRCam definitely surpasses IRAC in different ways. Here I
-compare several key factors that most valued by exoplanet observation
-between IRAC and NIRCam to illustrate the great potential of NIRCam of
-expanding our horizon on exoplanet. There factors are spatial
-resolution, spectral coverage, sensitivity, and frame
-rate.\par
+\label{sec:performance} As a detector equipped on the next generation
+infrared space telescope, NIRCam definitely surpasses IRAC in
+different ways. Here I compare several key factors that most valued by
+exoplanet observation between IRAC and NIRCam to illustrate the great
+potential of NIRCam of expanding our horizon on exoplanet. There
+factors are spatial resolution, spectral coverage, sensitivity, and
+frame rate.\par
 
-\subsection{Spatial Resolution}
-High spatial resolution is essential in direct imaging
-observation. Limited by small primary mirror size of Spitzer Space
-Telescope (0.85 m), it is not IRAC's strength to spatially resolved
-objects. The FWHM of point spread function (PSF) is $1''.66, 1''.72,
-1''.88 \mbox{and} 1''.92$ at 3.6, 4.5, 5.8 and 8.0 $\mu$m channels,
-which is hugh for direct imaiging study. The large pixel scale
-($~1''.2$) resulting in under sampled PSF makes the situation even
-worse. As a result, IRAC is hardly ever used for imaging of wide
-orbit planetary mass companions.\par
+\subsection{Spatial Resolution} High spatial resolution is essential
+to direct imaging observation. Limited by small size of primary mirror of
+Spitzer Space Telescope (0.85 m), it is not IRAC's strength to
+spatially resolve objects. The FWHMs of point spread functions (PSF) are
+$1''.66, 1''.72, 1''.88 \mbox{and} 1''.92$ at 3.6, 4.5, 5.8 and 8.0
+$\mu$m channels, which are hugh for direct imaiging study. The large
+pixel scale ($~1''.2$) resulting in under sampled PSF makes the
+situation even worse. As a result, IRAC is hardly ever used for
+imaging of wide orbit planetary mass companions.\par
 
 The 6.5 m sized primary mirror of JWST provide NIRCam with significant
-spatial resolve ability. NIRCam's PSF has FWHM of $0''.063$, and is
-nearly 20 times sharper than that of IRAC. The pixel scale that is
-optimized at 2 $\mu$m ensured well sampled PSFs at that wavelength. At
-smaller wavelength, the PSF would be a little undersampled. However
-the sample rate is still better than IRAC.
+spatial resolving ability. NIRCam's PSF has a FWHM of $0''.063$, which
+is nearly 20 times sharper than that of IRAC. The pixel scale that is
+optimized at 2 $\mu$m \citep{2005SPIE.5904...30H} ensured well sampled
+PSFs at that wavelength. At smaller wavelength, the PSF would be a
+little undersampled. However the sample rate is still better than
+IRAC.
 
-\subsection{Wavelength Coverage}
-IRAC covers four wavelength channel at 3.6, 4.5, 5.8 and 8.0 $\mu$m. The
-wavelength coverage of NIRCam which ranges from 1 to 5 $\mu$m lacks
-long wave length ability comparing to IRAC. However, more than 30
-filters supplied with NIRCam would provide spectral energy
-distribution with fine structures.
+\subsection{Wavelength Coverage} IRAC covers four wavelength channel
+at 3.6, 4.5, 5.8 and 8.0 $\mu$m. The wavelength coverage of NIRCam
+which ranges from 1 to 5 $\mu$m lacks long wave length ability
+comparing to IRAC. However, more than 30 filters supplied with NIRCam
+would provide spectral energy distribution with fine structures.
 
 \subsection{Sensitivity}
 
-Low thermal emission of exoplanets call for high sensitivity. Table
+Low thermal emission of exoplanets calls for high sensitivity. Table
 \ref{tab:irac-sen} and figure \ref{fig:nircam-sen} illustrate the
 sensitivities of IRAC and NIRCam. In figure \ref{fig:nircam-sen},
-sensitivities are expressed as the flux required to get 10 $\sigma$ signal
-with a 10000 s exposure. Since $\sigma sim \sqrt{t}$, 10 $\sigma$
-signal with 10000s exposure is generally equivalent to  1 $\sigma$
-signal with 100s exposure. Comparing to IRAC, NIRCam is more than 30
-times sensible with wide band filter and more than 10 times sensible
-with narrow band filter.\par
+sensitivities are expressed as the flux required to get 10 $\sigma$
+signal with a 10000 s exposure. Assuming $\sigma sim \sqrt{t}$, 10
+$\sigma$ signal with 10000s exposure is generally equivalent to 1
+$\sigma$ signal with 100s exposure. Comparing to IRAC, NIRCam is more
+than 30 times sensible with wide band filter and more than 10 times
+sensible with narrow band filter.\par
 
-\begin{deluxetable}{lrrrr}
-  \tablewidth{0pt} \tablecaption{IRAC Sensitivity (1 $\sigma$,
-    $\mu$Jy), \citep{2004ApJS..154...10F}\label{tab:irac-sen}}
-  \tablehead{Frame Time (s)&$3.6\mu$m&$4.5\mu$m&$5.8\mu$m&$8.0\mu$m}
-  \startdata
+\begin{deluxetable}{lrrrr} \tablewidth{0pt} \tablecaption{IRAC
+    Sensitivity (1 $\sigma$, $\mu$Jy),
+    \citep{2004ApJS..154...10F}\label{tab:irac-sen}} \tablehead{Frame
+    Time (s)&$3.6\mu$m&$4.5\mu$m&$5.8\mu$m&$8.0\mu$m} \startdata
   200&0.40&0.84&5.5&6.9 \\
   100&0.60&1.2&8.0&9.8 \\
   30&1.4&2.4&16&18 \\
@@ -226,39 +216,36 @@ with narrow band filter.\par
   \enddata
 \end{deluxetable}
 
-\begin{figure}
-  \centering
-  \plotone{NIRCam_sensitivity}
+\begin{figure} \centering \plotone{NIRCam_sensitivity}
   \caption{NIRCam Sensitivity (10 $\sigma$, exopsure time 10000s,
-    nJy)}
+nJy)}
   \label{fig:nircam-sen}
 \end{figure}
 
-\subsection{Frame Rate}
-To catch the fast variability of target, the detector is required to
-be read out fast. IRAC has an outstanding  performance for high frame
-rate thanks to its subarray mode. It can be read out a $32 \times 32$
-subarray for as fast as 0.02 s.
+\subsection{Frame Rate} To catch the fast variability of a target, the
+detector is required to be read out fast. IRAC has an outstanding
+performance for high frame rate thanks to its subarray mode. It can be
+read out a $32 \times 32$ subarray for as fast as 0.02 s.
 
-NIRCam also has the ability to read  part of the full array out at a
+NIRCam also has the ability to read part of the full array out at a
 speed of 10 $\mu$s per pixel. Therefore to read the same size subarray
 as IRAC, it takes about 0.01 s, which is even shorter than what it
 takes for IRAC.
 
-There are other factors related to exoplanet observation. For
+There are other factors that are related to exoplanet observation. For
 instance, high dynamic range that prevent the bright primary star
-image from severe saturation is essential in high contrast direct
+image from severe saturation is essential to high contrast direct
 imaging observation. This point is not discussed here because IRAC is
 not suitable for such observation and NIRCam has coronagraphic element
 to overcome these problems, which makes it not comparable.
 
-To sum, NIRCam has much better performance than IRAC in the aspects discussed
-above.
+To sum, NIRCam has much better performance than IRAC in the aspects
+discussed above.
 
 \section{Application in Exoplanet}
-\subsection{IRAC's Contribution in Exoplanet Observation}
-Initially, the most important in defining the IRAC design was the
-study of the early universe (\citep{2004ApJS..154...10F}). However, with the
+\subsection{IRAC's Contribution in Exoplanet Observation} Initially,
+the most important in defining the IRAC design was the study of the
+early universe (\citep{2004ApJS..154...10F}). However, with the
 advantage in infrared wavelength coverage and high sensitivity, IRAC
 plays a great role in exoplanet observation. Although IRAC is limited
 by its design, e.g. the large FWHM of PSF is an obstacle for IRAC to
@@ -266,82 +253,77 @@ carry out direct imaging of exoplanet, IRAC is the best devices for
 infrared transiting photometry before the launch of JWST. \par
 
 Exoplanets' low surface temperatures locate their thermal emission
-peaks in infrared. Specially hot Jupiters whose effective
-temperatures are about 1000 K, are most ideal targets to detect
-thermal emission with. \citep{2005ApJ...626..523C} took advantage of IRAC's
-high photometry precision to first detect the secondary eclipse of
+peaks in infrared. Specially hot Jupiters whose effective temperatures
+are about 1000 K, are most ideal targets to detect thermal emission
+with. \citet{2005ApJ...626..523C} took advantage of IRAC's high
+photometry precision to first detect the secondary eclipse of
 exoplanet TrES-1 which confirmed the thermal emission coming from the
 planet. They observed the target two channels, (4.5 and 8.0 $\mu$m),
 observed the field, and obtained 1518 full-array images in each of the
-two bandpasses \citep{2005ApJ...626..523C}. The great accuracy of spitzer
-photometry data made it possible for them to construct the light curve
-presented in figure \ref{fig:irac-lc} and detect the secondary eclipse
-dip.\par
+two bandpasses \citep{2005ApJ...626..523C}. The great accuracy of
+spitzer photometry data made it possible for them to construct the
+light curve that presented in figure \ref{fig:irac-lc} and detect the
+secondary eclipse dip.\par
 
-\begin{figure}
-  \centering
-  \plotone{second_eclipse}
+\begin{figure} \centering \plotone{second_eclipse}
   \caption{Light curve of TrES observed by IRAC Channel 4 (8$\mu$m)
-    \citep{2005ApJ...626..523C}.}
+\citep{2005ApJ...626..523C}.}
   \label{fig:irac-lc}
 \end{figure}
 
 In subarray mode, the high read out speed of IRAC is utilized to
-monitor the temporal variability of exoplanet. \citet{2007Natur.447..183K}
-observed HD189733 that is an eclipse planetary system containing a hot
-Jupiter and constructed a ’map’ of the distribution of temperatures by
-modeling the variability of the light curve. They monitored HD 189733
-continuously over a 33.1 hour period using the 8 $\mu$m channel of
-IRAC in subarray mode with a cadence of 0.4 s. With the high cadence,
-high precision time series data (\ref{fig:iraf-lc2}), they saw a
-distinct rise in flux beginning shortly after the end of the transit
-and continuing until a time just prior to the beginning of the
-secondary eclipse, from which they created the map of exoplanet
-temperatures.\par
+monitor the temporal variability of
+exoplanets. \citet{2007Natur.447..183K} observed HD189733 that is an
+eclipse planetary system containing a hot Jupiter and constructed a
+’map’ of the distribution of temperatures by modeling the variability
+of the light curve. They monitored HD 189733 continuously over a 33.1
+hour period using the 8 $\mu$m channel of IRAC in subarray mode with a
+cadence of 0.4 s. With the high cadence, high precision time series
+data (\ref{fig:iraf-lc2}), they saw a distinct rise in flux beginning
+shortly after the end of the transit and continuing until a time just
+prior to the beginning of the secondary eclipse, from which they
+created the map of exoplanet temperatures.\par
 
-\begin{figure}
-  \centering
-  \plotone{irac-lc2}
+\begin{figure} \centering \plotone{irac-lc2}
   \caption{Light curve of high cadence observation of HD189733
-    system\citep{2007Natur.447..183K}. }
+system\citep{2007Natur.447..183K}. }
   \label{fig:iraf-lc2}
 \end{figure}
 
 The combination of 4 channel photometries of IRAC could open a window
-for the study of exoplanet atmosphere \citep{2014PNAS..11112601B}. By comparing
-multi-band eclipse/secondary eclipse photometry with model spectrum,
-water and dust cloud feature can be traced \citep{2010ApJ...710.1551O}.
+for the study of exoplanet atmospheres \citep{2014PNAS..11112601B}. By
+comparing multi-band eclipse/secondary eclipse photometry with model
+spectrum, water and dust cloud feature can be traced
+\citep{2010ApJ...710.1551O}.
 
-\subsection{NIRCam's Potential}
-\S \ref{sec:performance} illustrates the great advantage in exoplanet
-observation. With the extraordinary work done with IRAC, we have
-reasons to expect NIRCam to make huge difference in this area of
-study.
+\subsection{NIRCam's Potential} \S \ref{sec:performance} illustrates
+the great advantages of NIRCam  in exoplanet observation. With the extraordinary
+work done with IRAC, we have reasons to expect NIRCam to make huge
+difference in this area of study.
 
-\subsection{Direct Imaging}
-Being different from IRAC that could only detect the thermal emission
-from exoplanet indirectly from secondary eclipse, NIRCam is able to
-directly take the image of exoplanets. The 6.5 m sized primary mirror
-and coronagraphic devices help NIRCam overcome two obstacles of direct
-imaging observation, small separation the planet from its host star
-and the high contrast in flux. With these barriers, today's ground
-based or HST direct imaging targets are always on the boundary of
-planet and binary companions, whose masses are $\sim 10 M_{\mbox{Jul}}$
-  and separations are more than 50 AU. However, a simulation for near
-  by M star systems showed that NIRCam have the ability to detect
-  Saturn-mass planet at ages of 1 Gyr or less located at a few 10s of
-  AU from their host star \citep{2012SPIE.8442E..2NB}.
+\subsubsection{Direct Imaging} Being different from IRAC that could
+only detect the thermal emission from exoplanet indirectly from
+secondary eclipse, NIRCam is able to directly take the image of
+exoplanets. The 6.5 m sized primary mirror and coronagraphic devices
+help NIRCam overcome two obstacles of direct imaging observation,
+small separation the planet from its host star and the high contrast
+in flux. With these barriers, today's direct imaging targets that are
+observed with ground based telescopes or HST are always on the
+boundary of planet and binary companions, whose masses are
+$\sim 10 M_{\mbox{Jul}}$ and separations are more than 50 AU. However,
+a simulation for near by M star systems showed that NIRCam have the
+ability to detect Saturn-mass planet at ages of 1 Gyr or less located
+at a few 10s of AU from their host star \citep{2012SPIE.8442E..2NB}.
 
-  \subsection{Transit Planet Study}
-  NIRCam has significant strength in sensitivity over IRAC. Higher
-  signal to noise data liberate observation from the limit in the size
-  and distance of the planets. NIRCam will be sensitive enough to
-  confirm many of the small exoplanet candidate found by the Kepler
-  mission to be in the habitable zones of their host stars
-  \citep{2012SPIE.8442E..2NB}. More fine structure would be uncovered
-  in the transit light curve taken by NIRCam, allowing us to study
-  properties such as limb darkening, oblateness and occultations of
-  the transit planets more precisely.
+  \subsubsection{Transit Planet Study} NIRCam has significant strength in
+sensitivity. Higher signal to noise data liberate
+observation from the limit of the size and distance of the
+planets. NIRCam will be sensitive enough to confirm many of the small
+exoplanet candidates found by the Kepler mission to be in the habitable
+zones of their host stars \citep{2012SPIE.8442E..2NB}. More fine
+structures would be uncovered in the transit light curve taken by
+NIRCam, allowing us to study properties such as limb darkening,
+oblateness and occultations of the transit planets more precisely.
 
 Similar to IRAC, high frame rate in subarray read out mode let NIRCam
 catch fast variability of transit planets with much higher signal to
@@ -349,19 +331,19 @@ noise. Great quality of data improves the confidence in mapping the
 surface temperature as well as clouds or hazes structures of the
 planets.
 
-\subsection{Exoplanet Spectroscopy}
-The most prominent advantage of NIRCam over IRAC is its
-multi-wavelength ability. The 4 channel IRAC observation is too coarse
-to identify any spectroscopic feature. However, more than 30 filters
-of NIRCam as well as the grism would totally reverse the situation.
+\subsubsection{Exoplanet Spectroscopy} The most prominent advantage of
+NIRCam over IRAC is its multi-wavelength ability. The 4 channel IRAC
+observation is too coarse to identify any spectroscopic
+feature. However, more than 30 filters as well as the grism
+would totally reverse the situation.
 
 For directed imaged planets, NIRCam allows grism observation to obtain
 the near infrared spectra of planetary mass companions to near by
-brown dwarfs \citep{2005SPIE.5905..185G}. Multi-band photometry and spectra
-would reveal information on accretion and formation history of
-exoplanets, which give the answer to the question that how planets
+brown dwarfs \citep{2005SPIE.5905..185G}. Multi-band photometries and
+spectra would reveal information on accretion and formation history of
+exoplanets, which gives the answer to the question that how planets
 form. NIRCam grism observation could also study the jets from young T
-Tauri stars, which would disclose  the sizes, excitations and column
+Tauri stars, which would disclose the sizes, excitations and column
 densities of such jets within $~10$ AU of nearby T Tauri stars,
 probing the radiation environments and gas densities of their
 planet-forming regions \citep{2005SPIE.5905..185G}.\par
@@ -372,29 +354,27 @@ of exoplanet's atmosphere observed by JWST NIRSpec. NIRCam grism could
 provide low resolution spectra partially covering that region, which
 would act together with NIRSpec's high resolution spectra to help
 identify atmosphere components of exoplanets.
-\begin{figure}[h]
-  \centering
-  \plotone{NIRSpec}
+\begin{figure}[h] \centering \plotone{NIRSpec}
   \caption{JWST NIRSpec prism simulation covers the wavelength range
-    of NIRCam grism \citep{2013ApJ...775...80F}. The low resolution NIRCam
-    grism spectra would be very useful for identifying water, methane
-    and haze components.}
+of NIRCam grism \citep{2013ApJ...775...80F}. The low resolution NIRCam
+grism spectra would be very useful for identifying water, methane and
+haze components.}
   \label{fig:spec}
 \end{figure}
 
-\section{Summary}
-As the imaging device equipped on JWST, NIRcam exhibit its
-extraordinary power in spatial resolution, sensitivity, spectroscopic
-ability and read-out speed. NIRCam has significant advantages over
-IRAC in these aspects, which guarantees its great potential in
-exoplanet observations.
+\section{Summary} As the imaging device equipped on JWST, NIRcam
+exhibit its extraordinary power in spatial resolution, sensitivity,
+spectroscopic ability and read-out speed. NIRCam has significant
+advantages over IRAC in these aspects, which guarantees its great
+potential in exoplanet observations.
 
 Frankly speaking, it is not for IRAC whose initial aim is to carry out
 deep, large-area surveys of $z>3$ galaxy, to compare the ability of
-exoplanet observation ability with NIRCam who is optimized for exoplanet
-studies. However, since even an unoptimized instrument would make great
-discoveries, we should be reasonably confident about the future
-observations with NIRCam.
+exoplanet observation ability with NIRCam who is optimized for
+exoplanet studies. However, since even an unoptimized instrument would
+make great discoveries, we should be reasonably confident about the
+future observations with NIRCam.
+
 \nocite{*}
 \bibliography{ref.bib}
 
@@ -406,4 +386,4 @@ observations with NIRCam.
 %%% TeX-master: t
 %%% End:
 
-%  LocalWords:  NIRCam pickoff NIRCam's
+% LocalWords: NIRCam pickoff NIRCam's
